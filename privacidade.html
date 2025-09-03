@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidade</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0a0f1a;
+      color: #e6edf3;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #0d1b2a;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      color: #1f6feb;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+    }
+    h2 {
+      color: #1f6feb;
+      margin-top: 30px;
+    }
+    footer {
+      background: #0d1b2a;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #8b949e;
+      margin-top: 40px;
+    }
+    .bot-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .bot-info img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    .bot-info h2 {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="bot-info">
+      <img id="bot-icon" alt="Bot Icon">
+      <h2 id="bot-name">Carregando...</h2>
+    </div>
+    <h1>Política de Privacidade</h1>
+  </header>
+
+  <main>
+    <h2>1. Coleta de Dados</h2>
+    <p>O bot pode coletar informações básicas e públicas fornecidas pelo Discord, como nome de usuário e avatar. Nenhum dado sensível é armazenado.</p>
+
+    <h2>2. Uso das Informações</h2>
+    <p>As informações coletadas são utilizadas apenas para fornecer funcionalidades dentro do Discord e melhorar a experiência dos usuários.</p>
+
+    <h2>3. Armazenamento</h2>
+    <p>Os dados são mantidos em ambiente seguro e não são compartilhados, vendidos ou utilizados para fins comerciais.</p>
+
+    <h2>4. Direitos do Usuário</h2>
+    <p>Você pode a qualquer momento solicitar a remoção de seus dados, revogar permissões ou encerrar o uso do bot.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    fetch("https://npm-kiritoapi.ecoguardiao.tech/api/v5/discord/user/1291153652836470906")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("bot-name").textContent = data.user.username;
+        document.getElementById("bot-icon").src = data.userProfile.avatar.iconURL;
+      });
+  </script>
+</body>
+</html>
